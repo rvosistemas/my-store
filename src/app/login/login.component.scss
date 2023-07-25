@@ -1,8 +1,5 @@
-// login.component.scss
-
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 
-// Estilos base para pantallas grandes (mobile-first)
 .login {
   display: flex;
   flex-direction: column;
@@ -107,14 +104,13 @@
     }
   }
 
-  // Estilos para pantallas pequeñas (mobile)
   @media screen and (max-width: 767px) {
     &__form {
       max-width: 100%;
     }
 
     &__icons-container {
-      gap: 5px; // Ajusta el espacio entre los íconos para pantallas pequeñas
+      gap: 5px;
     }
   }
 }

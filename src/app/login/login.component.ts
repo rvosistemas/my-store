@@ -1,5 +1,6 @@
 // login.component.ts
 import { Component } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -30,11 +31,19 @@ export class LoginComponent {
   onSubmit() {
     const isValidUser = this.validateUserMock(this.username, this.selectedIcons);
     if (isValidUser) {
-      // Mostrar mensaje de éxito
-      alert('Inicio de sesión exitoso.');
+      Swal.fire({
+        icon: 'success',
+        title: 'Inicio de sesión exitoso',
+        text: '¡Bienvenido!',
+        timer: 2000, // The message will close automatically after 2 seconds
+        showConfirmButton: false,
+      });
     } else {
-      // Mostrar mensaje de error
-      alert('Nombre de usuario o íconos incorrectos.');
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en el inicio de sesión',
+        text: 'Nombre de usuario o íconos incorrectos.',
+      });
     }
   }
 
