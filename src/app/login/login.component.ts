@@ -65,6 +65,7 @@ export class LoginComponent {
   }
 
   validateUserMock(username: string, selectedIcons: string[]): boolean {
+    console.log("username: ", username);
     return (
       username === 'juan' &&
       this.arraysAreEqual(selectedIcons, ['cat', 'dog', 'fish'])
@@ -74,4 +75,19 @@ export class LoginComponent {
   arraysAreEqual(arr1: any[], arr2: any[]): boolean {
     return JSON.stringify(arr1) === JSON.stringify(arr2);
   }
+
+  getIconMessage(): string {
+    const remainingIcons = 3 - this.selectedIcons.length;
+    if (remainingIcons === 3) {
+      return 'Selecciona 3 íconos de la lista';
+    } else if (remainingIcons === 2) {
+      return 'Falta seleccionar 2 íconos más';
+    } else if (remainingIcons === 1) {
+      return 'Falta seleccionar 1 ícono más';
+    } else {
+      return '¡Has seleccionado los 3 íconos!';
+    }
+  }
+
 }
+
