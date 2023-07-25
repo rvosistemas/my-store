@@ -1,0 +1,18 @@
+version: '3'
+services:
+  angular-app:
+    container_name: ${APP_NAME}
+    hostname: ${APP_NAME}
+    tty: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - ${APP_PORT}:${APP_PORT}
+    volumes:
+      - ./:/app
+    command: npm start -- --host ${APP_HOST} --poll 1
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=${NODE_ENV}
