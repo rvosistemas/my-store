@@ -1,0 +1,24 @@
+<!-- login.component.html -->
+<h2 class="login__title">Iniciar sesión para niños</h2>
+<form (ngSubmit)="onSubmit()" class="login__form">
+  <div class="login__form-group">
+    <label for="username" class="login__label">Nombre de usuario:</label>
+    <input type="text" id="username" name="username" [(ngModel)]="username"
+           required class="login__input">
+  </div>
+  <div class="login__form-group">
+    <label class="login__label">Selecciona 3 íconos:</label>
+    <div class="login__icons-container">
+      <div *ngFor="let icon of shuffledIcons" (click)="onIconClick(icon)"
+           class="login__icon"
+           [ngClass]="{'login__icon-selected': selectedIcons.includes(icon)}">
+        <i class="fa-solid fa-{{icon}} fa-sm"></i>
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="login__submit-btn">Iniciar sesión</button>
+</form>
+
+<div>
+  <p class="login__messages">{{ getIconMessage() }}</p>
+</div>
