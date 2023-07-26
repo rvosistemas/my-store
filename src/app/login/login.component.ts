@@ -18,7 +18,6 @@ export class LoginComponent {
   }
 
   onIconClick(icon: string) {
-    console.log("icon: ", icon);
     if (this.selectedIcons.includes(icon)) {
       this.selectedIcons = this.selectedIcons.filter((selectedIcon) => selectedIcon !== icon);
     } else {
@@ -65,7 +64,6 @@ export class LoginComponent {
   }
 
   validateUserMock(username: string, selectedIcons: string[]): boolean {
-    console.log("username: ", username);
     return (
       username === 'juan' &&
       this.arraysAreEqual(selectedIcons, ['cat', 'dog', 'fish'])

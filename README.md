@@ -1,27 +1,92 @@
-# MyStore
+Children's Login Project
+========================
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.5.
+This project is a web application developed in Angular that allows children to log in by selecting 3 icons from a list.
 
-## Development server
+Requirements
+------------
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Before starting the project, make sure you have the following installed:
 
-## Code scaffolding
+-   Node.js (version 16 or higher)
+-   npm (Node Package Manager)
+-   Angular CLI (version 12 or higher)
+-   Fontawesome (version 5 or higher)
+-   Sweetalert2 (version 11 or higher)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Steps to Get Started
+--------------------
 
-## Build
+Follow the steps below to start the project:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1.  Clone this repository to your local machine:
 
-## Running unit tests
+bash
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`git clone https://github.com/rvosistemas/my-store.git`
 
-## Running end-to-end tests
+1.  Navigate to the project directory:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+bash
 
-## Further help
+`cd my-store`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1.  Install the dependencies:
+
+`npm install`
+
+1.  Start the application in development mode:
+
+sql
+
+`npm start`
+
+1.  Open your web browser and go to `http://localhost:4200` to see the application in action.
+
+Dependencies
+------------
+
+The project uses the following dependencies:
+
+-   Angular (version X) - The web development framework used to build the application.
+-   fontawesome (version X) - The icon library used to display the icons in the login interface.
+
+Project Structure
+-----------------
+
+css
+
+`my-store/  
+
+  ├── src/ 
+  │   ├── app/
+  │   │   ├── login/
+  │   │   │   ├── login.component.ts
+  │   │   │   ├── login.component.html
+  │   │   │   └── login.component.scss
+  │   │   ├── app.component.ts
+  │   │   ├── app.component.html
+  │   │   └── app.component.scss
+  │   ├── assets/
+  │   ├── index.html
+  │   └── ...
+  ├── angular.json
+  ├── package.json
+  ├── tsconfig.json
+  └── ...`
+
+The `src` folder contains the application files, and the main component is `login.component`, which handles displaying the login interface and processing icon selections.
+
+Customization
+-------------
+
+If you want to customize the list of available icons, you can modify the `icons` variable in the `login.component.ts` file to include or exclude the icons you desire.
+
+Run component tests
+-------
+`ng test --include=**/login.component.spec.ts`
+
+License
+-------
+
+This project is distributed under the MIT License. For more details, check the `LICENSE` file in this repository.
